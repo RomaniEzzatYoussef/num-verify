@@ -12,10 +12,13 @@
 <html>
 <head>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css"  href="${pageContext.request.contextPath}/resources/css/index.css">
-    <title>Customer Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/history.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/index.css">
+    <title>History Page</title>
 
 </head>
 <body>
@@ -23,39 +26,39 @@
 
 <div id="wrapper" class="animate">
     <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.jsp">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+        <a class="navbar-brand"  href="${pageContext.request.contextPath}/" >Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ml-md-auto d-md-flex">
                 <li class="nav-item">
-                    <p style="color: #ffffff; font-family: 'Lucida Sans';font-size: larger;">numverify history</p>
+                    <p style="color: #ffffff; font-family: 'Lucida Sans';font-size: larger;">number verify history</p>
                 </li>
             </ul>
 
             <ul class="navbar-nav ml-md-auto d-md-flex">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.jsp"><i class="fas fa-key"></i> numverify page</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/"><i class="fas fa-key"></i> number verify page</a>
                 </li>
             </ul>
         </div>
     </nav>
 
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
 
-<div class="container">
-    <div class="d-flex justify-content-center h-100">
-        <div class="card">
-            <div class="card-header">
-                <h3>History</h3>
-            </div>
+                <div class="card-header">
+                    <h3>History</h3>
+                </div>
 
-            <div class="card-body">
-                <div class="table-responsive" id="sailorTableArea3">
+                <div class="card-body">
                     <table id="sailorTable3" class="table table-striped table-bordered" width="100%">
 
-                        <thead>
+                        <thead style="color: aqua">
                         <tr>
                             <td>id</td>
                             <td>status</td>
@@ -78,6 +81,9 @@
             </div>
         </div>
     </div>
+
+
+
 </div>
 
 

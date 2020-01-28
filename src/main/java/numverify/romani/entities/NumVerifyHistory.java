@@ -22,6 +22,9 @@ public class NumVerifyHistory {
     @Column(name = "date")
     private Date date;
 
+    public NumVerifyHistory() {
+
+    }
 
     public NumVerifyHistory(String status, String number) {
         this.status = status;

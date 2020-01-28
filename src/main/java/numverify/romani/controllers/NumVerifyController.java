@@ -14,39 +14,45 @@ import java.io.IOException;
 import java.net.*;
 import java.util.List;
 
-
 @Controller
 public class NumVerifyController {
 
     @RequestMapping("/")
     public String numVerifyPage(Model model) {
-        model.addAttribute("numverify", new NumberVerify());
+        model.addAttribute("numVerify", new NumberVerify());
         return "index";
     }
 
     @RequestMapping("/checkValidNumber")
-    public String jsonTest(@ModelAttribute("numverify") NumberVerify numberVerify, Model model)
+    public String checkValidNumber(@ModelAttribute("numVerify") NumberVerify numberVerify, Model model)
     {
+
         String link ="http://apilayer.net/api/validate?access_key=63932447085a399140d5fdcdc8643af4&number="+ numberVerify.getNumber() +"&country_code=&format=1";
+
+        String validNumberStatus = "";
+        String message = "";
+        if (numberVerify.getNumber().startsWith(".*[a-zA-Z].*")) {
+            message = "is not a number , please type valid number";
+        }
 
         try {
             URL url = new URL(link);
 
             ObjectMapper mapper = new ObjectMapper();
-            NumberVerify numberVerify1 =  mapper.readValue(url, NumberVerify.class);
-            model.addAttribute("numInfo", numberVerify1);
+            NumberVerify numVerifyInfo =  mapper.readValue(url, NumberVerify.class);
+            model.addAttribute("numVerifyInfo", numVerifyInfo);
 
-            String validNumberStaus = "";
-            String number = "";
-            if (numberVerify1.isValid() == false) {
-                model.addAttribute("message" , "invalid number");
-                validNumberStaus = "invalid number";
-                number = "";
+
+            if (numVerifyInfo.isValid() == false) {
+                message = "invalid number";
+                validNumberStatus = "invalid number";
             } else {
-                validNumberStaus = "valid number";
-                number = numberVerify1.getNumber();
+                validNumberStatus = "valid number";
             }
 
+
+
+            model.addAttribute("message" , message);
 
             SessionFactory sessionFactory = new Configuration()
                     .configure("connection-hibernate.xml")
@@ -57,7 +63,7 @@ public class NumVerifyController {
 
             try {
                 session.beginTransaction();
-                NumVerifyHistory numVerifyHistory = new NumVerifyHistory(validNumberStaus , number);
+                NumVerifyHistory numVerifyHistory = new NumVerifyHistory(validNumberStatus , numVerifyInfo.getNumber());
                 session.save(numVerifyHistory);
                 session.getTransaction().commit();
             } finally {
@@ -86,7 +92,7 @@ public class NumVerifyController {
         try {
             session.beginTransaction();
 
-            List<NumVerifyHistory> numVerifyHistories = session.createQuery("from NumVerifyHistory").getResultList();
+            List<NumVerifyHistory> numVerifyHistories = session.createQuery("from NumVerifyHistory ").getResultList();
 
             model.addAttribute("numVerifyHistories", numVerifyHistories);
 

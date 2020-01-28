@@ -7,5 +7,15 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="connection-hibernate.xml/Hibernate" uuid="56a42f75-4b2d-4fb6-b780-25fd115f0856">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+E:/work/IntelliJ IDEA Projects/Spring 5/num-verify/src/main/resources/connection-hibernate.xml</remarks>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/romani?useSSL=false&amp;serverTimezone=UTC</jdbc-url>
+    </data-source>
   </component>
 </project>

@@ -1,59 +1,32 @@
+/* Made with love by Mutiullah Samim*/
 
-#wrapper {
-    padding: 90px 15px;
-}
-
-.header-top {
-    box-shadow: 0 3px 5px rgba(0, 0, 0, .1)
-}
+@import url('https://fonts.googleapis.com/css?family=Numans');
 
 html, body {
     background-image: url('../images/background.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
     font-family: 'Numans', sans-serif;
-    color: white;
+    color: #ffffff;
 }
-
-@media (min-width: 992px) {
-    #wrapper {
-        margin-left: 70px
-    }
-
-    .side-nav li {
-        border-bottom: 1px solid #50575d;
-    }
-
-    .side-nav li a {
-        padding: 20px;
-        display: block;
-        position: relative;
-    }
-
-}
-
 
 .container {
+    height: 100%;
     align-content: center;
 }
 
-.card-right {
-    float: right;
-    height: 500px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 400px;
-    font-size: 25px;
-    background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-.card-center {
-    float: none;
+.card {
     height: 450px;
     margin-top: auto;
     margin-bottom: auto;
     width: 1000px;
-    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.cardtable {
+    height: 600px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: auto;
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -72,9 +45,6 @@ html, body {
     color: white;
 }
 
-.card-footer {
-    color: white;
-}
 .social_icon {
     position: absolute;
     right: 20px;
@@ -132,4 +102,13 @@ input:focus {
 #sailorTable1 , #sailorTable2 , #sailorTable3{
     white-space: normal;
 }
-
+tbody {
+    display:block;
+    height:300px;
+    overflow:auto;
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}

@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ml-md-auto d-md-flex">
                 <li class="nav-item">
-                    <p style="color: #ffffff; font-family: 'Lucida Sans';font-size: larger;">numverify</p>
+                    <p style="color: #ffffff; font-family: 'Lucida Sans';font-size: larger;">number verify</p>
                 </li>
             </ul>
 
@@ -43,7 +43,7 @@
     <div class="card-right">
 
         <div class="card-header">
-            <h3>Formatted</h3>
+            <h3>Details</h3>
 
         </div>
         <div class="card-footer">
@@ -51,37 +51,37 @@
 
                 <tr>
                     <td class="width_100">Valid</td>
-                    <td id="valid_number" class="valid">${numInfo.valid}</td>
+                    <td id="valid_number" class="valid">${numVerifyInfo.valid}</td>
                 </tr>
 
                 <tr>
                     <td class="width_100">Local Format</td>
-                    <td id="local_format">${numInfo.local_format}</td>
+                    <td id="local_format">${numVerifyInfo.local_format}</td>
                 </tr>
 
                 <tr>
                     <td class="width_100">Intl. Format</td>
-                    <td id="intl_format">${numInfo.international_format}</td>
+                    <td id="intl_format">${numVerifyInfo.international_format}</td>
                 </tr>
 
                 <tr>
                     <td class="width_100">Country</td>
-                    <td id="country_name">${numInfo.country_name}</td>
+                    <td id="country_name">${numVerifyInfo.country_name}</td>
                 </tr>
 
                 <tr>
                     <td class="width_100">Location</td>
-                    <td id="location">${numInfo.location}</td>
+                    <td id="location">${numVerifyInfo.location}</td>
                 </tr>
 
                 <tr>
                     <td class="width_100">Carrier</td>
-                    <td id="carrier">${numInfo.carrier}</td>
+                    <td id="carrier">${numVerifyInfo.carrier}</td>
                 </tr>
 
                 <tr>
                     <td class="width_100">Line Type</td>
-                    <td id="line_type">${numInfo.line_type}</td>
+                    <td id="line_type">${numVerifyInfo.line_type}</td>
                 </tr>
 
             </table>
@@ -96,17 +96,15 @@
             <div class="big_box_left">
                 <h1 align="left" id="promo_heading" class="promo_heading index">Global Phone Number Validation<br></h1>
                 <br><br>
-                <div align="left" class="promo_sub_heading">Real-time REST API supporting 232 countries
-                </div><br><br>
+                <div align="left" class="promo_sub_heading">Real-time REST API supporting 232 countries</div><br><br>
 
-                <form:form modelAttribute="numverify" action="checkValidNumber" id="phone_validation_form">
+                <form:form modelAttribute="numVerify" action="checkValidNumber" id="phone_validation_form">
 
                     <div class="form_row vat_check">
                         <div id="realtime_check">Enter Phone Number</div>
 
                         <form:input id="phone_to_check"  name="phone_number" class="vat_input" placeholder="+1 415-858-6273"  path="number"/>
-                        <label for="submit" class="phone_input_label disabled">Validate</label>
-                        <input type="submit" id="submit" class="visibility_hidden">
+                        <input type="submit" id="submit" value="Validate" class="visibility_hidden">
 
                         <p style="color: red">${message}</p>
                     </div>
